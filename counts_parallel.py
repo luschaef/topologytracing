@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Feb  3 14:42:00 2022
-
-@author: luisa
-"""
 
 import numpy as np
 import sys 
@@ -133,14 +128,11 @@ basename = sys.argv[1]
 outdir = sys.argv[2]
 
 beads = np.loadtxt(f"{outdir}/{basename}-init-trace.dat")
-#beads = np.loadtxt("/home/luisa/mnt/jubio3/distmaps/assignment_code/jan22_card/refined-1.dat")
 n = len(beads)
 
 pred_mat = np.loadtxt(f"{outdir}/dist-pred-{basename}.dat")
-#pred_mat = np.loadtxt("/home/luisa/mnt/jubio3/distmaps/assignment_code/dist-pred-card.dat")
 pred_mat = pred_mat.reshape(n,n)
 calc_mat = np.loadtxt(f"{outdir}/dist-calc-{basename}.dat")
-#calc_mat = np.loadtxt("/home/luisa/mnt/jubio3/distmaps/assignment_code/jan22_card/card-dist-calc.dat")
 calc_mat = calc_mat.reshape((n,n))     
 
 
@@ -160,9 +152,6 @@ for result in results:
  
 np.savetxt(f"{outdir}/counts.txt", sum_counts.ravel(), fmt="%d")
 
-plt.figure()
-plt.imshow(sum_counts)
     
     
     
- 

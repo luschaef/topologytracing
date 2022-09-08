@@ -21,7 +21,6 @@ for i in range(n):
         else:
             a[i,j]= np.argmax(dist[i,j,1:])
 
-#plt.imshow(a)
 
 
 np.savetxt(f'{outdir}/dist-pred-{basename}.dat', a.ravel(), fmt='%d') 

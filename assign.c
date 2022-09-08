@@ -426,7 +426,6 @@ fprintf(stderr,"step %i\n",kk);
 if (0 == 0) { 
 // write ind_max to file for checking
    sprintf(fname,"%s/ind_max_%d.dat", outdir,kk);
-   //sprintf(fname,"ind_max_%05i.dat",kk);
    if ( (fp = fopen(fname,"w")) == NULL)
      {
        fprintf(stderr,"ERROR: Can't open file : %s\n",fname);
@@ -454,21 +453,18 @@ if (0 == 0) {
 
 
 // WRITE WEIGHTS
-//   sprintf(fname,"%s/weights_%d.dat", outdir, kk);
    sprintf(fname,"%s/weights_%d.dat", outdir,kk);
    if ( (fp = fopen(fname,"w")) == NULL)
    {
        fprintf(stderr,"ERROR: Can't open file : %s\n",fname);
        exit(1);
    }
-// Achtung so ist w später transformiert zu counts und so! besser for j, for i
    for (i=0;i<nseq;i++) 
      for (j=0;j<n;j++) 
            fprintf(fp,"%f\n",w[j*nseq + i]);
    fclose(fp);
 
 // WRITE GRADIENT
-   //sprintf(fname,"%s/gradient_%d.dat", outdir,kk);
    sprintf(fname,"%s/gradient_%d.dat", outdir,kk);
    if ( (fp = fopen(fname,"w")) == NULL)
    {

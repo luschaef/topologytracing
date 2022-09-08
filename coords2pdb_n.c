@@ -17,6 +17,7 @@ char fname[MAX_STRING_SIZE];
 
 char coordfile[MAX_STRING_SIZE];
 char pdbfile[MAX_STRING_SIZE];
+char nfile[MAX_STRING_SIZE];
 
 int main (int argc, char *argv[])
 {
@@ -40,11 +41,27 @@ int main (int argc, char *argv[])
 	
      } else if ( ! strcmp(argv[arg_count], "-n") )
      {
-	 n = atoi(argv[arg_count+1]);
+         strcpy(nfile,argv[arg_count+1]);
          arg_count+=2;
      }
 
   }
+//===================
+//READ n
+//==================
+//     if ( (&n= (int) calloc(1,sizeof(int)) ) ==  NULL ) {
+//         fprintf(stderr,"ERROR: could not allocate memory \n");
+//         exit(1);
+// }
+     strcpy(fname,nfile);
+     if ( (fp = fopen(fname,"r")) == NULL)
+     {
+       fprintf(stderr,"ERROR: Can't open file : %s\n",fname);
+       exit(1);
+     }
+     fscanf(fp,"%d",&n);
+
+     fclose(fp);
 // ===================
 // READ COORDINATES
 // ===================

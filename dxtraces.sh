@@ -144,7 +144,7 @@ do
 ### GENERATE TRACE
 echo "running pathwalker"
 #/home/luisa/e2pathwalker_gunnar.py --output=.tmp-trace-${i}.pdb --solver=lkh  --mapfile=in1.mrc --mapthresh=${MAP_THRESHOLD} --mapweight=0.6  --average=0 --noise=0.1 --subunit=1 --overwrite --dmin=0.0 --dmax=8.0  c.pdb
-/home/luisa/e2pathwalker_gunnar.py --output=.tmp-trace-${i}.pdb --solver=lkh  --mapfile=${inputmap} --mapthresh=${MAP_THRESHOLD} --mapweight=0.6  --average=0 --noise=0.1 --subunit=1 --overwrite --dmin=0.0 --dmax=8.0  c.pdb
+e2pathwalker_customized.py --output=.tmp-trace-${i}.pdb --solver=lkh  --mapfile=${inputmap} --mapthresh=${MAP_THRESHOLD} --mapweight=0.6  --average=0 --noise=0.1 --subunit=1 --overwrite --dmin=0.0 --dmax=8.0  c.pdb
 #mv .tmp-trace-${i}.pdb trace-${i}.pdb 
 done
 
